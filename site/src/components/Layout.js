@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import SEO from "./SEO"
+import Footer from "./Footer"
 
 const Layout = ({ title, description, children }) => {
   const data = useStaticQuery(graphql`
@@ -19,13 +20,31 @@ const Layout = ({ title, description, children }) => {
           title
         }
       }
+      sanityHome {
+        _rawMetaDescription
+      }
     }
   `)
 
+  function toPlainText(blocks = []) {
+    return blocks
+      .map(block => {
+        if (block._type !== "block" || !block.children) {
+          return ""
+        }
+        return block.children.map(child => child.text).join("")
+      })
+      .join("\n\n")
+  }
+
   return (
     <>
-      <SEO title={title} description={description} />
+      <SEO
+        title={title}
+        description={toPlainText(data.sanityHome._rawMetaDescription)}
+      />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }
