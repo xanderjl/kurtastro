@@ -1,7 +1,7 @@
 export default {
   name: "resume",
   title: "Resume",
-  type: "document",
+  type: "object",
   fields: [
     {
       name: "resume",

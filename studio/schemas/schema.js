@@ -6,7 +6,9 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import section from "./section";
 import blockContent from "./blockContent";
 import embedPlayer from "./embedPlayer";
-import resume from "./resume"
+import resume from "./resume";
+import socials from "./socials"
+import home from "./home";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -16,8 +18,10 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
+    home,
     section,
     resume,
+    socials,
     blockContent,
     embedPlayer,
   ]),

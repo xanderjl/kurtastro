@@ -221,21 +221,19 @@ class RouteAnnouncer extends _react.default.Component {
       }
 
       const newAnnouncement = `Navigated to ${pageName}`;
+      const oldAnnouncement = this.announcementRef.current.innerText;
 
-      if (this.announcementRef.current) {
-        const oldAnnouncement = this.announcementRef.current.innerText;
-
-        if (oldAnnouncement !== newAnnouncement) {
-          this.announcementRef.current.innerText = newAnnouncement;
-        }
+      if (oldAnnouncement !== newAnnouncement) {
+        this.announcementRef.current.innerText = newAnnouncement;
       }
     });
   }
 
   render() {
-    return /*#__PURE__*/_react.default.createElement("div", (0, _extends2.default)({}, _routeAnnouncerProps.RouteAnnouncerProps, {
-      ref: this.announcementRef
-    }));
+    return (/*#__PURE__*/_react.default.createElement("div", (0, _extends2.default)({}, _routeAnnouncerProps.RouteAnnouncerProps, {
+        ref: this.announcementRef
+      }))
+    );
   }
 
 } // Fire on(Pre)RouteUpdate APIs
@@ -267,9 +265,10 @@ class RouteUpdates extends _react.default.Component {
   }
 
   render() {
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, this.props.children, /*#__PURE__*/_react.default.createElement(RouteAnnouncer, {
-      location: location
-    }));
+    return (/*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, this.props.children, /*#__PURE__*/_react.default.createElement(RouteAnnouncer, {
+        location: location
+      }))
+    );
   }
 
 }
