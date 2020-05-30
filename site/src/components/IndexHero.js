@@ -35,8 +35,8 @@ const IndexHero = () => {
         <div className="hero-body">
           <div className="container">
             <div className="content has-text-centered">
-              <h1 className="title is-size-1 is-uppercase">Dylan Cole</h1>
-              <h2 className="subtitle is-size-4 is-family-monospace">
+              <h1 className="title hero-title is-size-1 is-uppercase">Dylan Cole</h1>
+              <h2 className="subtitle is-size-4 is-size-5-mobile is-family-monospace">
                 Game Audio Designer
               </h2>
             </div>
