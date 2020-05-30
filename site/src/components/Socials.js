@@ -29,35 +29,35 @@ const Socials = props => {
       {linkedin ? (
         <SocialTag
           url={linkedin}
-          icon={<FaLinkedinIn />}
+          icon={<FaLinkedinIn className={props.iconClassName} />}
           className={props.className}
         />
       ) : null}
       {twitter ? (
         <SocialTag
           url={twitter}
-          icon={<FaTwitter />}
+          icon={<FaTwitter className={props.iconClassName} />}
           className={props.className}
         />
       ) : null}
       {facebook ? (
         <SocialTag
           url={facebook}
-          icon={<FaFacebook />}
+          icon={<FaFacebook className={props.iconClassName} />}
           className={props.className}
         />
       ) : null}
       {instagram ? (
         <SocialTag
           url={instagram}
-          icon={<FaInstagram />}
+          icon={<FaInstagram className={props.iconClassName} />}
           className={props.className}
         />
       ) : null}
       {soundcloud ? (
         <SocialTag
           url={soundcloud}
-          icon={<GrSoundcloud />}
+          icon={<GrSoundcloud className={props.iconClassName} />}
           className={props.className}
         />
       ) : null}
