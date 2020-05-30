@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   FaLinkedinIn,
   FaFacebook,
@@ -31,6 +31,7 @@ const Socials = props => {
           url={linkedin}
           icon={<FaLinkedinIn className={props.iconClassName} />}
           className={props.className}
+          hoverColor="#0073b1"
         />
       ) : null}
       {twitter ? (
@@ -38,6 +39,7 @@ const Socials = props => {
           url={twitter}
           icon={<FaTwitter className={props.iconClassName} />}
           className={props.className}
+          hoverColor="rgba(29,161,242,1.00)"
         />
       ) : null}
       {facebook ? (
@@ -45,6 +47,7 @@ const Socials = props => {
           url={facebook}
           icon={<FaFacebook className={props.iconClassName} />}
           className={props.className}
+          hoverColor="#2D88FF"
         />
       ) : null}
       {instagram ? (
@@ -52,6 +55,7 @@ const Socials = props => {
           url={instagram}
           icon={<FaInstagram className={props.iconClassName} />}
           className={props.className}
+          hoverColor="#E1306C"
         />
       ) : null}
       {soundcloud ? (
@@ -59,19 +63,28 @@ const Socials = props => {
           url={soundcloud}
           icon={<GrSoundcloud className={props.iconClassName} />}
           className={props.className}
+          hoverColor="#f50"
         />
       ) : null}
     </>
   )
 }
 
-export const SocialTag = ({ url, icon, className }) => {
+export const SocialTag = ({ url, icon, className, hoverColor }) => {
+  const [hover, setHover] = useState(false)
+  const style = {
+    background: hoverColor,
+  }
+
   return (
     <a
       href={url}
       target="_blank"
       rel="noopener noreferrer"
       className={className}
+      onMouseEnter={() => setHover(!hover)}
+      onMouseLeave={() => setHover(!hover)}
+      style={hover ? style : null}
     >
       {icon}
     </a>

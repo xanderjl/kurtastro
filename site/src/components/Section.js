@@ -38,8 +38,8 @@ const Section = ({ bgImage, url, title, body }) => {
       </div>
     </BackgroundImage>
   ) : (
-    <section class="section">
-      <div class="container has-text-white">
+    <section className="section">
+      <div className="container has-text-white">
         {url ? (
           <div className="media">
             <ReactPlayer url={url} controls />

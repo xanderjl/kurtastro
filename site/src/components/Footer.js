@@ -6,7 +6,9 @@ const Footer = () => {
     <footer className="footer has-text-white">
       <div className="container">
         <div className="content has-text-centered">
-          <Socials iconClassName="footer-icon" />
+          <div class="icon-wrapper">
+            <Socials iconClassName="footer-icon" />
+          </div>
           <p>Kurt Astro &copy;2020</p>
         </div>
       </div>
