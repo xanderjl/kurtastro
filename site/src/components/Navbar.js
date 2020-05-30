@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Socials from "../components/Socials"
@@ -31,19 +31,25 @@ const Navbar = () => {
       }
     }
   `)
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <div className="navbar">
       <div className="navbar-brand">
         <Link to="/">
           <Img fixed={data.sanityHome.logo.asset.fixed} />
         </Link>
-        <div className="navbar-burger">
+        <div
+          role="button"
+          className={"navbar-burger" + (menuOpen ? " is-active" : "")}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
-      <div className="navbar-menu">
+      <div className={"navbar-menu" + (menuOpen ? " is-active" : "")}>
         <div className="navbar-end">
           <a
             href={data.sanityHome.resume.resume.asset.url}
