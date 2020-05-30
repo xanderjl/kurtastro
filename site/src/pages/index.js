@@ -8,8 +8,16 @@ import Section from "../components/Section"
 const IndexPage = ({ data }) => (
   <Layout title="Home">
     <IndexHero />
-    {data.allSanitySection.edges.map(({node: section}) => (
-      <Section url={section.media.url} title={section.title} body={section._rawBody} />
+    {data.allSanitySection.edges.map(({ node: section }) => (
+      <Section
+        key={section.id}
+        bgImage={
+          section.backgroundImage ? section.backgroundImage.asset.fluid : null
+        }
+        url={section.media ? section.media.url : null}
+        title={section.title}
+        body={section._rawBody}
+      />
     ))}
   </Layout>
 )
@@ -30,8 +38,8 @@ export const data = graphql`
           }
           backgroundImage {
             asset {
-              fluid {
-                src
+              fluid(maxWidth: 1440) {
+                ...GatsbySanityImageFluid
               }
             }
           }
