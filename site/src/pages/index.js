@@ -27,7 +27,7 @@ export const data = graphql`
     sanityHome {
       _rawMetaDescription
     }
-    allSanitySection {
+    allSanitySection(sort: {fields: _createdAt}) {
       edges {
         node {
           id
