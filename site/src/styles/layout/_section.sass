@@ -1,0 +1,28 @@
+$content-padding: 1.25rem
+
+.section
+  background-color: $purple-gray
+  .container
+    display: flex
+    flex-direction: column
+
+    .content
+      max-width: 55ch
+      padding: $content-padding 0
+
+  @media screen and ( min-width: $desktop )
+    padding: $section-padding-medium
+
+    &:nth-child(2n-1)
+      .container
+        flex-direction: row-reverse
+
+    .container
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+
+
+      .content
+        max-width: 55ch
+        padding: 0 $content-padding
