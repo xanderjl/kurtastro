@@ -49,7 +49,7 @@ const Navbar = () => {
             href={data.sanityHome.resume.resume.asset.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="navbar-item is-size-5"
+            className="navbar-item is-size-5 is-family-monospace"
           >
             Resume
           </a>
@@ -57,11 +57,11 @@ const Navbar = () => {
             href="mailto:dylan@kutastro.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="navbar-item is-size-5"
+            className="navbar-item is-size-5 is-family-monospace"
           >
             Contact
           </a>
-          <Socials className="navbar-item is-size-5" />
+          <Socials className="navbar-item is-size-5 is-family-monospace" />
         </div>
       </div>
     </div>
